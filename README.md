@@ -9,16 +9,22 @@ It provides quick access to GLS community tools while playing Star Citizen, incl
 - Full, Compact, Run View, and Park modes
 - Always-on-top companion window
 - Cargo and Salvage sessions maintained independently while the application is running
-- F9 show/hide hotkey when Windows has access to the keyboard input
+- F9 show/hide hotkey when Windows has access to keyboard input
 - Live GLS web tools, allowing tool improvements to appear without requiring a new Companion release
 
-## Current Release
+## Download GLS Companion
 
-**v0.1 Beta**
+### Current Release: v0.1.0 Beta
 
-This is an initial public beta. Bugs and unexpected behavior may occur.
+**[Download GLS Companion v0.1.0 Beta](https://github.com/OmegaTron75/GLSCompanion/releases/download/v0.1.0-beta/GLSCompanion-Setup-0.1.0.exe)**
 
-If you encounter a problem, please report it through the GitHub Issues section.
+Windows 10/11 · 64-bit
+
+This is the initial public beta of GLS Companion. Bugs and unexpected behavior may occur.
+
+For release details, known limitations, and previous versions, visit the **[GLS Companion Releases](https://github.com/OmegaTron75/GLSCompanion/releases)** page.
+
+If you encounter a problem, please report it through **[GitHub Issues](https://github.com/OmegaTron75/GLSCompanion/issues)** or join us on the **[Great Lakes Syndicate Discord](https://discord.glsyndicate.net/)**.
 
 ## Star Citizen Compatibility
 
@@ -30,23 +36,41 @@ Depending on your Star Citizen display/input configuration, the game may capture
 
 ## GLS Community Tools
 
-Cargo Hauling Optimizer:
+Cargo Hauling Optimizer:  
 https://cargotool.glsyndicate.net/
 
-Salvage Optimizer:
+Salvage Optimizer:  
 https://salvagetool.glsyndicate.net/
 
-Great Lakes Syndicate:
+Great Lakes Syndicate:  
 https://glsyndicate.net/
 
-Join GLS:
+Great Lakes Syndicate Discord:  
+https://discord.glsyndicate.net/
+
+Join GLS:  
 https://JoinGLS.net/
 
 ## Requirements
 
 - Windows 10 or Windows 11
+- 64-bit Windows
 - Microsoft Edge WebView2 Runtime
 - Internet connection
+
+## Beta Feedback
+
+GLS Companion v0.1.0 is an initial public beta.
+
+If you encounter a bug, unexpected behavior, or have a suggestion for a future version, please use one of the following:
+
+**GitHub Issues:**  
+https://github.com/OmegaTron75/GLSCompanion/issues
+
+**Great Lakes Syndicate Discord:**  
+https://discord.glsyndicate.net/
+
+Player feedback will help guide bug fixes and future GLS Companion development.
 
 ## Fan Content Notice
 
