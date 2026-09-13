@@ -1,56 +1,146 @@
-# GLS Companion
+Beta Notice
 
-**GLS Companion** is a Windows and Linux desktop companion application developed for the Great Lakes Syndicate Star Citizen community.
+This is an early public beta of GLS Companion.
 
-> **Early Public Beta**
->
-> GLS Companion is still in active early development. We are releasing it publicly so Star Citizen players can use the tools, test them with different ships and gameplay situations, and help us improve them.
->
-> **Feedback, bug reports, ship-specific cargo observations, and feature suggestions are very welcome.** The Cargo Grid and Cargo Cubing systems in particular will continue to be refined as they are tested across more ships and cargo configurations.
+While the application and its core functionality have been tested, Star Citizen has a large number of ships, cargo grids, loading configurations, and gameplay situations. Some ship-specific behavior may still require adjustment.
 
-GLS Companion provides quick access to GLS community tools while playing Star Citizen, including:
+If something does not look right, a cargo grid does not match what you see in game, a loading plan could be improved, or you simply have an idea that would make the tool better, please tell us.
 
-- GLS Cargo Hauling Optimizer
-- GLS Salvage Optimizer
-- New Cargo Grid and Cargo Cubing system
-- Ship-specific physical cargo grid layouts
-- Destination-aware cargo placement and loading plans
-- Load Sequence and Unload Mode
-- Cargo container sizing and placement assistance
-- Full, Compact, Run View, and Park modes
-- Always-on-top companion window
-- Cargo and Salvage sessions maintained independently while the application is running
-- F9 global show/hide hotkey
-- Saved Companion settings between sessions
-- Live GLS web tools, allowing Cargo and Salvage improvements to appear without requiring a new Companion release
-- Windows and Linux support
+Player feedback will directly help guide fixes, cargo-grid refinements, and future GLS Companion development.
 
-## Download GLS Companion
+For release details and downloads, visit the GLS Companion Releases page.
 
-### Current Release: v0.1.0 Beta
+Report problems through GitHub Issues or join us on the Great Lakes Syndicate Discord.
 
-#### Windows
+Cargo Grid and Cargo Cubing
 
-[**Download GLS Companion v0.1.0 Beta for Windows**](https://github.com/OmegaTron75/GLSCompanion/releases/download/v0.1.0-beta/GLSCompanion-Setup-0.1.0.exe)
+GLS Companion's Cargo Hauling Optimizer now includes a new Cargo Grid and Cargo Cubing system designed to help players determine not only what cargo they need to move, but how to physically load it onto their ship.
 
-Windows 10/11 · 64-bit
+The system can provide:
 
-#### Linux
+Ship-specific cargo grid visualization
+Physical cargo placement planning
+Container-size-aware cubing
+Destination grouping
+Route-aware loading order
+Load Sequence instructions
+Unload Mode for the current destination
+Visual highlighting of cargo for the active stop
+Support for different cargo-access designs, including enclosed, exposed, and single-direction loading configurations
 
-Linux packages are available from the GLS Companion release page:
+The goal is to help answer questions such as:
 
-[**GLS Companion Releases**](https://github.com/OmegaTron75/GLSCompanion/releases)
+What containers should I use?
+Where should each container go?
+Which cargo should be loaded first?
+Which cargo needs to remain accessible?
+What should I unload at the current stop?
+How can I avoid burying an earlier delivery behind a later one?
 
-Available Linux packages:
+This is one of the newest areas of GLS Companion and is still being expanded and refined.
 
-- `GLSCompanion_0.1.0_amd64.deb` — recommended installer for Ubuntu/Debian-based systems
-- `GLSCompanion-Linux-x64.zip` — portable/manual Linux package
+If you find a ship whose physical cargo behavior differs from the planner, please report it. Real player testing across the Star Citizen ship lineup is extremely valuable during this early beta.
 
-The Linux build has been tested on **Ubuntu 24.04 LTS x86-64 using Xorg/X11**.
+Star Citizen Compatibility
 
-**Important:** The global F9 show/hide hotkey currently requires an **X11/Xorg session on Linux**. The application can run under Wayland, but the global F9 keyboard hook is not currently supported there.
+GLS Companion is a standard desktop companion application.
 
-To check your current Linux desktop session:
+It does not inject into Star Citizen, modify the game client, read game memory, or interact directly with the Star Citizen process.
 
-```bash
-echo $XDG_SESSION_TYPE
+Depending on your Star Citizen display and input configuration, the game may capture keyboard or mouse input while it has focus.
+
+The F9 global hotkey provides quick show/hide functionality where supported.
+
+On Linux, global F9 currently requires an X11/Xorg desktop session.
+
+Live GLS Community Tools
+
+GLS Companion loads the GLS Cargo and Salvage tools directly from the GLS community services.
+
+This means improvements to the web-based Cargo and Salvage tools can often be deployed without requiring users to download and reinstall GLS Companion.
+
+Cargo Hauling Optimizer:
+https://cargotool.glsyndicate.net/
+
+Salvage Optimizer:
+https://salvagetool.glsyndicate.net/
+
+Great Lakes Syndicate:
+https://glsyndicate.net/
+
+Great Lakes Syndicate Discord:
+https://discord.glsyndicate.net/
+
+Join GLS:
+https://JoinGLS.net/
+
+Requirements
+Windows
+Windows 10 or Windows 11
+64-bit Windows
+Microsoft Edge WebView2 Runtime
+Internet connection
+Linux
+64-bit Linux
+Ubuntu 24.04 LTS or compatible distribution recommended
+Internet connection
+X11/Xorg session required for the global F9 hotkey
+
+Linux support is new and we welcome reports from users testing GLS Companion on other distributions and desktop environments.
+
+Beta Feedback and Bug Reports
+
+We want your feedback.
+
+GLS Companion v0.1.0 is an early public beta, and community testing is an important part of its development.
+
+We especially want to hear about:
+
+Cargo grid inaccuracies
+Ship-specific loading behavior
+Container placement issues
+Cargo Cubing recommendations that could be improved
+Route or load-order issues
+Linux compatibility
+UI or window-mode problems
+F9 hotkey behavior
+Bugs or unexpected behavior
+Ideas for future Cargo or Salvage features
+GitHub Issues
+
+https://github.com/OmegaTron75/GLSCompanion/issues
+
+Great Lakes Syndicate Discord
+
+https://discord.glsyndicate.net/
+
+When reporting a Cargo Grid issue, including the ship, cargo sizes, destinations, and what you observed in game will help us reproduce and improve the behavior.
+
+Great Lakes Syndicate
+
+GLS Companion is developed for the Great Lakes Syndicate Star Citizen community.
+
+Website:
+https://glsyndicate.net/
+
+Discord:
+https://discord.glsyndicate.net/
+
+Join GLS:
+https://JoinGLS.net/
+
+United We Explore. Stronger We Thrive.
+
+Fan Content Notice
+
+This is an unofficial Star Citizen fan application, not affiliated with the Cloud Imperium group of companies.
+
+All Star Citizen related content not authored by its host or users is property of its respective owners.
+
+GLS Companion is a noncommercial community project developed for Great Lakes Syndicate.
+
+Copyright
+
+Copyright © 2026 OmegaTron75.
+
+Developed for Great Lakes Syndicate.
