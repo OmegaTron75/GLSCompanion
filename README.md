@@ -1,146 +1,113 @@
-Beta Notice
+## 🚛 Latest Cargo Tool Updates
 
-This is an early public beta of GLS Companion.
+The GLS Companion Cargo Tool has received a major set of live updates based on real-world hauling tests and community feedback.
 
-While the application and its core functionality have been tested, Star Citizen has a large number of ships, cargo grids, loading configurations, and gameplay situations. Some ship-specific behavior may still require adjustment.
+**No new GLS Companion download or reinstall is required.** Cargo Tool improvements are delivered live and will automatically be available the next time the tool is loaded.
 
-If something does not look right, a cargo grid does not match what you see in game, a loading plan could be improved, or you simply have an idea that would make the tool better, please tell us.
+### Cargo Grid & Physical Load Planning
 
-Player feedback will directly help guide fixes, cargo-grid refinements, and future GLS Companion development.
+The Cargo Tool now goes beyond route optimization and helps plan how cargo should actually be loaded into your selected ship.
 
-For release details and downloads, visit the GLS Companion Releases page.
+- Uses ship-specific cargo grid geometry and cargo capacity
+- Automatically detects supported maximum container sizes by ship
+- Supports manual container-size override when needed
+- Visually maps containers onto the ship's cargo grids
+- Plans cargo placement based on physical cargo access
+- Keeps cargo positioned toward the appropriate ramp or loading access
+- Provides guided Load Sequence and Unload Mode views
+- Identifies commodities, container sizes, quantities, destinations, and physical grid locations
+- Highlights the cargo for the current unload stop while dimming cargo for later stops
 
-Report problems through GitHub Issues or join us on the Great Lakes Syndicate Discord.
+### Intelligent Multi-Contract Planning
 
-Cargo Grid and Cargo Cubing
+Multiple hauling contracts can now be evaluated together instead of treating every contract as an isolated run.
 
-GLS Companion's Cargo Hauling Optimizer now includes a new Cargo Grid and Cargo Cubing system designed to help players determine not only what cargo they need to move, but how to physically load it onto their ship.
+GLS Companion will:
 
-The system can provide:
+- Combine compatible contracts when they fit within the selected ship
+- Use available cargo space to begin oversized contracts when possible
+- Carry unfinished containers forward into additional physical load sessions
+- Track which containers have already been scheduled
+- Preserve remaining contract cargo for subsequent runs
+- Prevent oversized contracts from unnecessarily blocking smaller compatible contracts
+- Build each physical load around the actual cargo remaining
 
-Ship-specific cargo grid visualization
-Physical cargo placement planning
-Container-size-aware cubing
-Destination grouping
-Route-aware loading order
-Load Sequence instructions
-Unload Mode for the current destination
-Visual highlighting of cargo for the active stop
-Support for different cargo-access designs, including enclosed, exposed, and single-direction loading configurations
+This means a large contract does not automatically require waiting for an empty ship. If there is usable space remaining during another run, GLS Companion can begin moving that contract immediately.
 
-The goal is to help answer questions such as:
+### Continue Contracts Across Multiple Runs
 
-What containers should I use?
-Where should each container go?
-Which cargo should be loaded first?
-Which cargo needs to remain accessible?
-What should I unload at the current stop?
-How can I avoid burying an earlier delivery behind a later one?
+If the selected ship cannot complete all remaining cargo in one trip, the Cargo Tool can now continue the contract across multiple physical loads.
 
-This is one of the newest areas of GLS Companion and is still being expanded and refined.
+After completing the current load, you can:
 
-If you find a ship whose physical cargo behavior differs from the planner, please report it. Real player testing across the Star Citizen ship lineup is extremely valuable during this early beta.
+**Continue Contract with Current Ship**
 
-Star Citizen Compatibility
+Keep using the same ship and automatically generate the next load using only the remaining containers. This can be repeated until the contract is complete.
 
-GLS Companion is a standard desktop companion application.
+**Switch to a Different Ship**
 
-It does not inject into Star Citizen, modify the game client, read game memory, or interact directly with the Star Citizen process.
+GLS Companion can also identify ships capable of completing the remaining cargo in a single trip.
 
-Depending on your Star Citizen display and input configuration, the game may capture keyboard or mouse input while it has focus.
+When another ship is selected, the tool automatically:
 
-The F9 global hotkey provides quick show/hide functionality where supported.
+- Carries forward only the remaining contract cargo
+- Rebuilds the physical cargo grid for the new ship
+- Recalculates container compatibility
+- Generates a new Load Sequence
+- Generates a new Unload Mode plan
+- Updates ship capacity and container-size validation
+- Removes previous ship compatibility warnings when the newly selected ship resolves them
 
-On Linux, global F9 currently requires an X11/Xorg desktop session.
+This allows a hauling session to begin with one ship and continue with a more capable ship without rebuilding the remaining contract manually.
 
-Live GLS Community Tools
+### Ship & Container Compatibility
 
-GLS Companion loads the GLS Cargo and Salvage tools directly from the GLS community services.
+Cargo capacity alone does not determine whether a ship can complete a contract.
 
-This means improvements to the web-based Cargo and Salvage tools can often be deployed without requiring users to download and reinstall GLS Companion.
+GLS Companion now evaluates the physical container sizes supported by the selected ship.
 
-Cargo Hauling Optimizer:
-https://cargotool.glsyndicate.net/
+If a contract contains containers that are too large for that ship:
 
-Salvage Optimizer:
-https://salvagetool.glsyndicate.net/
+- The runner is warned before attempting the load
+- Compatible containers can still be included in the current physical plan
+- Incompatible containers remain tracked as unfinished cargo
+- Another compatible ship can be selected later to finish the contract
 
-Great Lakes Syndicate:
-https://glsyndicate.net/
+This allows the planner to distinguish between **available SCU capacity** and **physical container compatibility**.
 
-Great Lakes Syndicate Discord:
-https://discord.glsyndicate.net/
+### Commodity-Aware Loading & Unloading
 
-Join GLS:
-https://JoinGLS.net/
+Load and unload instructions now identify exactly what each container contains.
 
-Requirements
-Windows
-Windows 10 or Windows 11
-64-bit Windows
-Microsoft Edge WebView2 Runtime
-Internet connection
-Linux
-64-bit Linux
-Ubuntu 24.04 LTS or compatible distribution recommended
-Internet connection
-X11/Xorg session required for the global F9 hotkey
+Instead of displaying only:
 
-Linux support is new and we welcome reports from users testing GLS Companion on other distributions and desktop environments.
+`2 × 16 SCU`
 
-Beta Feedback and Bug Reports
+the tool can display:
 
-We want your feedback.
+`2 × 16 SCU — Aluminum`
 
-GLS Companion v0.1.0 is an early public beta, and community testing is an important part of its development.
+This information is included throughout the Load Sequence and Unload Mode views, making it significantly easier to verify cargo while working at freight elevators.
 
-We especially want to hear about:
+### Improved Cargo Grid Visualization
 
-Cargo grid inaccuracies
-Ship-specific loading behavior
-Container placement issues
-Cargo Cubing recommendations that could be improved
-Route or load-order issues
-Linux compatibility
-UI or window-mode problems
-F9 hotkey behavior
-Bugs or unexpected behavior
-Ideas for future Cargo or Salvage features
-GitHub Issues
+Cargo-grid rendering has also been improved across the supported ship library.
 
-https://github.com/OmegaTron75/GLSCompanion/issues
+- Small cargo grids are automatically enlarged for readability
+- Grid layouts remain centered within the visualization
+- Large cargo layouts retain an appropriate scale
+- Container placement remains visible throughout guided unloading
+- Empty destinations are removed from the physical Load Sequence
+- Destination-aware packing prevents later dropoffs from being accidentally blocked by earlier cargo
 
-Great Lakes Syndicate Discord
+### Still Early Beta
 
-https://discord.glsyndicate.net/
+GLS Companion remains in **Early Public Beta**, and continued testing is extremely valuable.
 
-When reporting a Cargo Grid issue, including the ship, cargo sizes, destinations, and what you observed in game will help us reproduce and improve the behavior.
+Cargo hauling can involve unusual ship layouts, cargo access points, container restrictions, contract combinations, and edge cases that are difficult to reproduce without actually running contracts in-game.
 
-Great Lakes Syndicate
+If you find a ship, contract, cargo grid, container size, route, or loading situation that does not behave correctly, please let us know.
 
-GLS Companion is developed for the Great Lakes Syndicate Star Citizen community.
+Every report helps make GLS Companion better for the Star Citizen hauling community.
 
-Website:
-https://glsyndicate.net/
-
-Discord:
-https://discord.glsyndicate.net/
-
-Join GLS:
-https://JoinGLS.net/
-
-United We Explore. Stronger We Thrive.
-
-Fan Content Notice
-
-This is an unofficial Star Citizen fan application, not affiliated with the Cloud Imperium group of companies.
-
-All Star Citizen related content not authored by its host or users is property of its respective owners.
-
-GLS Companion is a noncommercial community project developed for Great Lakes Syndicate.
-
-Copyright
-
-Copyright © 2026 OmegaTron75.
-
-Developed for Great Lakes Syndicate.
+**United We Explore. Stronger We Thrive.**
