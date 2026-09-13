@@ -1,0 +1,398 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:web="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.WebView"
+        x:Class="GLS.Companion.CrossPlatform.MainWindow"
+        Width="1100"
+        Height="750"
+        MinWidth="300"
+        MinHeight="40"
+        Title="GLS Companion"
+        Background="#0B1017">
+
+	<Window.Styles>
+
+		<Style Selector="Button">
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+			<Setter Property="CornerRadius" Value="4" />
+
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+
+						<ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalContentAlignment="Center"
+                                          VerticalContentAlignment="Center" />
+
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="Button.toolButton">
+			<Setter Property="Background" Value="#12202B" />
+			<Setter Property="Foreground" Value="#B8C8D5" />
+			<Setter Property="BorderBrush" Value="#304454" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="FontSize" Value="11" />
+			<Setter Property="FontWeight" Value="SemiBold" />
+			<Setter Property="Padding" Value="8,4" />
+		</Style>
+
+		<Style Selector="Button.toolButton:pointerover">
+			<Setter Property="Background" Value="#1A3546" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#4A829E" />
+		</Style>
+
+		<Style Selector="Button.toolButton:pressed">
+			<Setter Property="Background" Value="#174C63" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#32B8E8" />
+		</Style>
+
+		<Style Selector="Button.toolButton.activeTool">
+			<Setter Property="Background" Value="#0D668A" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#32B8E8" />
+		</Style>
+
+		<Style Selector="Button.toolButton.activeTool:pointerover">
+			<Setter Property="Background" Value="#117DA4" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#61D0F7" />
+		</Style>
+
+		<Style Selector="Button.modeButton">
+			<Setter Property="Background" Value="#131D27" />
+			<Setter Property="Foreground" Value="#B9C6D0" />
+			<Setter Property="BorderBrush" Value="#30404E" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="FontSize" Value="10" />
+			<Setter Property="Padding" Value="6,4" />
+		</Style>
+
+		<Style Selector="Button.modeButton:pointerover">
+			<Setter Property="Background" Value="#253746" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#58768C" />
+		</Style>
+
+		<Style Selector="Button.modeButton:pressed">
+			<Setter Property="Background" Value="#314A5C" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#6D94AD" />
+		</Style>
+
+		<Style Selector="ToggleButton.topmostToggle">
+			<Setter Property="Background" Value="#131D27" />
+			<Setter Property="Foreground" Value="#C7D2DB" />
+			<Setter Property="BorderBrush" Value="#30404E" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="CornerRadius" Value="4" />
+			<Setter Property="FontSize" Value="10" />
+			<Setter Property="Padding" Value="8,4" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+			<Setter Property="VerticalContentAlignment" Value="Center" />
+
+			<Setter Property="Template">
+				<ControlTemplate>
+					<Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+
+						<ContentPresenter Content="{TemplateBinding Content}"
+                                          HorizontalContentAlignment="Center"
+                                          VerticalContentAlignment="Center" />
+
+					</Border>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<Style Selector="ToggleButton.topmostToggle:pointerover">
+			<Setter Property="Background" Value="#253746" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#58768C" />
+		</Style>
+
+		<Style Selector="ToggleButton.topmostToggle:checked">
+			<Setter Property="Background" Value="#0D668A" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#32B8E8" />
+		</Style>
+
+		<Style Selector="ToggleButton.topmostToggle:checked:pointerover">
+			<Setter Property="Background" Value="#117DA4" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#61D0F7" />
+		</Style>
+
+		<Style Selector="Button.restoreButton">
+			<Setter Property="Background" Value="#0D668A" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#32B8E8" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="FontSize" Value="10" />
+			<Setter Property="FontWeight" Value="SemiBold" />
+			<Setter Property="Padding" Value="12,4" />
+		</Style>
+
+		<Style Selector="Button.restoreButton:pointerover">
+			<Setter Property="Background" Value="#117DA4" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+			<Setter Property="BorderBrush" Value="#61D0F7" />
+		</Style>
+
+		<Style Selector="Button.restoreButton:pressed">
+			<Setter Property="Background" Value="#095470" />
+			<Setter Property="Foreground" Value="#FFFFFF" />
+		</Style>
+
+	</Window.Styles>
+
+	<Grid Background="#0B1017">
+
+		<!-- NORMAL APPLICATION UI -->
+
+		<Grid x:Name="NormalInterface"
+              RowDefinitions="Auto,Auto,*,Auto"
+              IsVisible="True">
+
+			<Border Grid.Row="0"
+                    Background="#101720"
+                    BorderBrush="#263341"
+                    BorderThickness="0,0,0,1"
+                    Padding="12,6">
+
+				<Grid ColumnDefinitions="*,Auto">
+
+					<StackPanel Spacing="0">
+
+						<TextBlock Text="GLS COMPANION"
+                                   Foreground="#F4F8FB"
+                                   FontSize="19"
+                                   FontWeight="Bold" />
+
+						<TextBlock Text="GREAT LAKES SYNDICATE"
+                                   Foreground="#6F879B"
+                                   FontSize="9"
+                                   FontWeight="SemiBold" />
+
+					</StackPanel>
+
+					<Border Grid.Column="1"
+                            Background="#15212C"
+                            BorderBrush="#2A3C4B"
+                            BorderThickness="1"
+                            CornerRadius="6"
+                            Padding="10,4"
+                            VerticalAlignment="Center">
+
+						<TextBlock Text="STAR CITIZEN COMMUNITY TOOLS"
+                                   Foreground="#91A8BA"
+                                   FontSize="9"
+                                   FontWeight="SemiBold" />
+
+					</Border>
+
+				</Grid>
+
+			</Border>
+
+			<Border Grid.Row="1"
+                    Background="#0E151D"
+                    BorderBrush="#263341"
+                    BorderThickness="0,0,0,1"
+                    Padding="7">
+
+				<StackPanel Orientation="Horizontal"
+                            Spacing="7">
+
+					<Button x:Name="CargoButton"
+                            Classes="toolButton activeTool"
+                            Content="CARGO"
+                            Width="105"
+                            Height="34"
+                            Click="CargoButton_Click" />
+
+					<Button x:Name="SalvageButton"
+                            Classes="toolButton"
+                            Content="SALVAGE"
+                            Width="105"
+                            Height="34"
+                            Click="SalvageButton_Click" />
+
+					<Border Width="1"
+                            Height="25"
+                            Background="#31404D"
+                            Margin="7,0"
+                            VerticalAlignment="Center" />
+
+					<Button x:Name="FullButton"
+                            Classes="modeButton"
+                            Content="FULL"
+                            Width="78"
+                            Height="34"
+                            Click="FullButton_Click" />
+
+					<Button x:Name="CompactButton"
+                            Classes="modeButton"
+                            Content="COMPACT"
+                            Width="88"
+                            Height="34"
+                            Click="CompactButton_Click" />
+
+					<Button x:Name="RunButton"
+                            Classes="modeButton"
+                            Content="RUN"
+                            Width="72"
+                            Height="34"
+                            Click="RunButton_Click" />
+
+					<Button x:Name="ParkButton"
+                            Classes="modeButton"
+                            Content="PARK"
+                            Width="72"
+                            Height="34"
+                            Click="ParkButton_Click" />
+
+					<ToggleButton x:Name="TopmostCheckBox"
+                                  Classes="topmostToggle"
+                                  Content="ALWAYS ON TOP"
+                                  Width="120"
+                                  Height="34"
+                                  Margin="7,0,0,0"
+                                  Click="TopmostCheckBox_Click" />
+
+				</StackPanel>
+
+			</Border>
+
+			<Border x:Name="WebViewContainer"
+                    Grid.Row="2"
+                    Background="#080C11"
+                    BorderBrush="#263746"
+                    BorderThickness="1"
+                    CornerRadius="6"
+                    Margin="7,10,7,8">
+
+				<Grid>
+
+					<web:NativeWebView x:Name="CargoWebView"
+                                       Source="https://cargotool.glsyndicate.net/"
+                                       IsVisible="True" />
+
+					<web:NativeWebView x:Name="SalvageWebView"
+                                       Source="https://salvagetool.glsyndicate.net/"
+                                       IsVisible="False" />
+
+				</Grid>
+
+			</Border>
+
+			<Border x:Name="FooterContainer"
+                    Grid.Row="3"
+                    Background="#0E151D"
+                    BorderBrush="#263341"
+                    BorderThickness="0,1,0,0"
+                    Padding="8,6">
+
+				<Grid ColumnDefinitions="*,Auto">
+
+					<StackPanel Orientation="Horizontal"
+                                Spacing="8">
+
+						<TextBlock Text="GLS"
+                                   Foreground="#43B8E4"
+                                   FontWeight="Bold"
+                                   FontSize="10" />
+
+						<TextBlock Text="Great Lakes Syndicate"
+                                   Foreground="#738A9D"
+                                   FontSize="10" />
+
+					</StackPanel>
+
+					<StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                Spacing="8">
+
+						<TextBlock Text="CROSS PLATFORM"
+                                   Foreground="#647B8D"
+                                   FontSize="9"
+                                   FontWeight="SemiBold" />
+
+						<Border Width="5"
+                                Height="5"
+                                CornerRadius="3"
+                                Background="#43B8E4"
+                                VerticalAlignment="Center" />
+
+					</StackPanel>
+
+				</Grid>
+
+			</Border>
+
+		</Grid>
+
+		<!-- PARKED MINI BAR -->
+
+		<Border x:Name="ParkedInterface"
+                IsVisible="False"
+                Background="#101720"
+                BorderBrush="#32B8E8"
+                BorderThickness="1"
+                CornerRadius="4"
+                Padding="7,4">
+
+			<Grid ColumnDefinitions="*,Auto">
+
+				<!-- DRAG AREA -->
+
+				<Grid Grid.Column="0"
+                      Background="Transparent"
+                      PointerPressed="ParkedDragArea_PointerPressed">
+
+					<StackPanel Orientation="Horizontal"
+                                Spacing="7"
+                                VerticalAlignment="Center">
+
+						<TextBlock Text="GLS"
+                                   Foreground="#43B8E4"
+                                   FontSize="11"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center" />
+
+						<TextBlock Text="COMPANION"
+                                   Foreground="#D9E5ED"
+                                   FontSize="10"
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" />
+
+					</StackPanel>
+
+				</Grid>
+
+				<Button Grid.Column="1"
+                        x:Name="RestoreButton"
+                        Classes="restoreButton"
+                        Content="RESTORE"
+                        Width="82"
+                        Height="26"
+                        Click="RestoreButton_Click" />
+
+			</Grid>
+
+		</Border>
+
+	</Grid>
+
+</Window>
